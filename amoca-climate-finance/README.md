@@ -1,39 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [
-`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amoca Climate Finance DApp
+
+A decentralized application for funding renewable energy projects and financing solar installations and electric vehicles through Solana blockchain technology.
+
+## Overview
+
+Amoca Climate Finance bridges the gap between traditional green financing and blockchain technology, creating a transparent, efficient, and accessible platform for both borrowers and investors.
+
+Key features:
+- Transparent blockchain-based lending
+- Real-time impact metrics
+- Competitive rates for borrowers
+- Attractive returns for investors
+- Environmental impact tracking
+
+## Pages Structure
+
+- **Dashboard** (`/dashboard`): Central hub showing key metrics, recent activity, and navigation
+- **Borrowing** (`/borrowing`): For users seeking financing for solar installations or EVs
+- **Lending** (`/lending`): For investors looking to fund green energy projects
+- **Portfolio** (`/portfolio`): For tracking investments and loans
+
+## Technology Stack
+
+- **Frontend**: Next.js with TypeScript and Tailwind CSS
+- **Blockchain**: Solana (for fast, low-cost transactions)
+- **Data Storage**: Combination of on-chain data and off-chain database
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Set up environment variables:
+Create a `.env.local` file with:
+```
+NEXT_PUBLIC_SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+## Solana Integration
 
-To learn more about Next.js, take a look at the following resources:
+This project includes a basic Solana integration layer in `src/components/solana-integration.tsx`. For a production application, you would need to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install proper Solana wallet adapters:
+```bash
+npm install @solana/wallet-adapter-react @solana/wallet-adapter-wallets @solana/wallet-adapter-react-ui
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions
-are welcome!
+2. Set up proper wallet adapter configuration
+3. Create the necessary Solana programs (smart contracts) for:
+   - Loan origination
+   - Investment pooling
+   - Repayment tracking
+   - Impact metrics calculation
 
-## Deploy on Vercel
+## Smart Contract Structure
 
-The easiest way to deploy your Next.js app is to use
-the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+For a complete implementation, the following Solana programs would be needed:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for
-more details.
+1. **Loan Program**: Handles loan creation, funding, and repayment tracking
+2. **Investment Pool**: Manages diversified investments across multiple projects
+3. **Impact Tracker**: Calculates and verifies environmental impact metrics
+
+## TypeScript Setup
+
+To resolve TypeScript errors related to JSX elements, ensure your `tsconfig.json` includes:
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
+```
+
+## Deployment
+
+This application can be deployed on platforms like Vercel or Netlify that support Next.js applications.
+
+## License
+
+MIT
