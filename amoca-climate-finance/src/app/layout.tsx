@@ -3,6 +3,7 @@ import './globals.css'
 import { AppProviders } from '@/components/app-providers'
 import { AppLayout } from '@/components/app-layout'
 import React from 'react'
+import { CivicAuthProvider } from "@civic/auth/nextjs";
 
 export const metadata: Metadata = {
   title: 'AMOCA Climate Finance',
