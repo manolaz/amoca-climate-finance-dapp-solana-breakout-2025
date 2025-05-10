@@ -20,7 +20,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased`}>
         <AppProviders>
-          <AppLayout links={links}>{children}</AppLayout>
+          <AppLayout links={links}>
+            <CivicAuthProvider>
+              {children}
+            </CivicAuthProvider>
+            </AppLayout>
         </AppProviders>
       </body>
     </html>
