@@ -1,6 +1,6 @@
 'use client'
 
-import { RefreshCw, Droplet } from 'lucide-react'
+import { RefreshCw } from 'lucide-react'
 import { useQueryClient } from '@tanstack/react-query'
 import { useMemo, useState } from 'react'
 import { ExplorerLink } from '../cluster/cluster-ui'
